@@ -1,7 +1,5 @@
 package com.epam.demo;
 
-import lombok.experimental.Accessors;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,15 +12,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = {"com.epam.demo"})
 public class DemoApplication {
-	private static Add add;
-	public static void main(String[] args) {
+    private static Add add;
 
-		SpringApplication.run(DemoApplication.class, args);
-		ApplicationContext context = new AnnotationConfigApplicationContext(DemoApplication.class);
-		add = context.getBean(Add.class);
-				//AppContext.getApplicationContext().getBean(VaccineManagementTool.class);
+    public static void main(String[] args) {
 
-		System.out.print("hello"+add.add(1,3));
-	}
+        SpringApplication.run(DemoApplication.class, args);
+        ApplicationContext context = new AnnotationConfigApplicationContext(DemoApplication.class);
+        add = context.getBean(Add.class);
+        //AppContext.getApplicationContext().getBean(VaccineManagementTool.class);
+
+        System.out.print("hello" + add.add(1, 3));
+    }
 
 }
